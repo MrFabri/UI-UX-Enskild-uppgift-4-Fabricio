@@ -1,62 +1,54 @@
-# Team-vadSomHelst API-documentation
+## UI/UX - Enskild uppgift 4 | Fabricio
 
-GruppUppgift 2 – Spegeln Del 2
-Visningar, betyg & recensioner
+<style>
+    .bold {
+        font-weight: 600;
+    }
+</style>
 
-# Movies
+<ol>
 
-## `/api/movies`
-**GET**
+<li class="bold">Skapa en egen branch eller fork av gruppens repo för Spegeln. Denna branch eller repo ska i namnet innehålla ditt namn och att det är uppgift 4, så du kan redovisa med en länk till din branch.
 
-> Returns all movies
+`Fork`
+</li>
 
-## `/api/movies/{id}`
+<br>
 
-**GET**
-> Returns a movie
+<li class="bold">I repot ska du committa in kod som gör att webbplatsen uppfyller kraven för WCAG för att uppnå godtagbar ranking enligt det analysverktyg du använder.
 
+`La alla li inuti en ul`
+`La till arial-labels för sociala media ikoner`
+`Aria-labels med role option och listbox för bild accordion/slider parent och childs`
+`Lazy load images with the property loading="lazy"`
+`La till meta tags för varje sida`
+`Aria label för knappar`
+</li>
 
-# Screenings
+<br>
 
-## `/api/screenings`
+<li class="bold">Du kan använda online-tjänster (om sidan är deployad publikt) eller lighthouse, för att få en grundläggande kontroll av rankingen samt automatiserade förslag på vad som ska åtgärdas.
 
-**GET**
-> Returns all the screenings
+`Lighthouse, Developer tools`
+</li>
 
-## `/api/movies/{id}/screenings`
+<br>
 
-**GET**
-> Returns all the screenings for a specific movie
+<li class="bold">kriv förslag på saker som skulle kunna göras för att biografens webbplats och kommunikation ska bli ännu mer tillgänglig. Du kan även ta upp teknik och lösningar bortom det som omfattas av WCAG och som kan öka tillgängligheten ytterligare. (minst 100 ord)
 
-## `/api/movies/{id}/screenings?page={page}`
+`Lägg till alternativa text beskrivningar till alla bilder, social media posts och förbättra färgkontrasten på webbplatsen för att säkerställa att texten är lätt att läsa detta kommer att hjälpa användare med synnedsättning att förstå innehållet i bilderna.
+Implementera hjälpmedel såsom röstigenkänning eller text-till-tal mjukvara.
+Erbjud flera sätt för användare att kontakta biografen, till exempel e-post, telefon eller ett kontaktformulär.
+Lägg till meta taggar för varje sida, det förbättrar "SEO" vilket gör att webbsidan kommer att hittas snabbare
+Skapa en feedback formulär för att användare ska kunna rapportera eventuella problem med tillgänglighet som de möter på webbplatsen.`
+</li>
 
-**GET**
-> Returns all the screenings for a movie with pagination, every page has 5 screenings max and it also includes information about how many pages there is.
+<br>
 
-## `/api/screenings/startpage`
+**Before:**
+<img src="https://cdn.discordapp.com/attachments/557975354082590741/1082681337758097480/image.png">
 
-**GET**
-> Returns screenings for the next 5 days and maximum 10 screenings.
+**After:**
+<img src="https://cdn.discordapp.com/attachments/557975354082590741/1082680824337547274/image.png">
 
-
-# Reviews
-## `/api/reviews`
-
-**GET**
-> Returns all reviews
-
-**POST**
-> Posts a review to API
-
-## `/api/reviews/{id}`
-
-**GET**
-> Returns all reviews for a specific movie
-
-### With the query:
-*?page=x* 
->Returns the reviews for a movie with pagination. 5 reviews at every page where x is page number.
-
-# Ratings
-## `/movies/{id}/ratings`
->Returns the rating for a movie
+<ol>

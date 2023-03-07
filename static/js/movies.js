@@ -10,8 +10,20 @@ async function getScreenings() {
 
   return data;
 }
+
 const data = getScreenings();
+
 data.then((data) => {
+  if(data.length === 0 || undefined || data === undefined) {
+    const ele = document.createElement('li');
+    ele.innerHTML = '<p><i class="fa-solid fa-circle-info"> </i> Det finns inga nya filmvisningar för tillfället, kom tillbaka senare!</p>';
+    ele.style.color = 'white';
+    ele.style.position = 'absolute';
+    ul.style.transform="translateY(-20%)";
+    ul.appendChild(ele);
+    return;
+  }
+
   data.forEach((screening) => {
     const time = screening.start_time.split("T")[1].split(":00.")[0];
     const date = screening.start_time.split("T")[0];
@@ -64,4 +76,15 @@ data.then((data) => {
         break;
     }
   });
-});
+}).catch(err => {
+  if(err) {
+    console.log(err)
+  }
+
+  const ele = document.createElement('li');
+  ele.style.color = 'white';
+  ele.innerHTML = '<p><i class="fa-sharp fa-solid fa-circle-exclamation"></i> Ett fel uppstod, försök ladda om sidan!</p>';
+  ele.style.position = 'absolute';
+  ul.style.transform="translateY(-20%)";
+  ul.appendChild(ele)
+})

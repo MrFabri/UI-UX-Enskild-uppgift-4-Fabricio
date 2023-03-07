@@ -16,7 +16,11 @@ app.use('/api', apiRoutes);
 app.get('*', (req, res) => {
     res.render("404", {
         path: req.url,
-        headerMenu: menu
+        headerMenu: menu,
+        meta: {
+            name: 'Sidan finns inte',
+            description: `Kunde inte hitta ${req.url}, prova en annan sida!`
+        }
     });
 });
 

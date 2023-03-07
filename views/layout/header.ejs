@@ -8,6 +8,8 @@
     <script src="/static/js/main.js" defer type="module"></script>
     <link rel="stylesheet" type="text/css" href="../static/css/main.css" />
     <title>Biograf Luleå</title>
+    <meta name="name" content="<%= meta.name %>">
+    <meta name="description" content="<%= meta.description %>">
   </head>
 
   <body>
@@ -15,7 +17,7 @@
       <div class="header-content-wrap sec-cont">
         <a href="/" class="logo"><img src="../static/images/Logo.png" alt="logo" /></a>
         <nav class="header-nav">
-          <button class="header-nav-toggle"></button>
+          <button class="header-nav-toggle" aria-label="Öppna meny"></button>
           <menu class="header-menu">
             <% headerMenu.forEach(function(a) { %>
             <li>

@@ -3,6 +3,7 @@ const next = document.querySelector(".next");
 const accordionSection = document.querySelector(".accordion-cont");
 const slider = document.createElement("div");
 slider.classList.add("slider");
+slider.ariaLabel ='role="listbox"';
 let interval;
 let margin = 0;
 
@@ -22,13 +23,14 @@ data.then((data) => {
     const id = movie.id;
 
     section.classList.add("slide");
+    section.ariaLabel = 'role="option"';
 
     section.innerHTML = `<div class="slide-content">
     <h2>${title}</h2>
     
     <a href="/movies/${id}" class="slide-btn">Biljetter</a>
   </div>
-  <img src="${image}" alt="movie banner" />`;
+  <img src="${image}" loading="lazy" alt="Film banner" layout="responsive" sizes="100%, 20rem"/>`;
     slider.appendChild(section);
     accordionSection.append(slider);
   });
@@ -41,6 +43,7 @@ function rest() {
   const slides = document.querySelectorAll(".slide");
 
   let slideCount = slides.length;
+
   next.addEventListener("click", () => {
     clearInterval(interval);
     if (currentSlide >= slideCount) {
