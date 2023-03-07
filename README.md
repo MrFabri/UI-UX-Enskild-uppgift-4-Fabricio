@@ -1,11 +1,5 @@
 ## UI/UX - Enskild uppgift 4 | Fabricio
 
-<style>
-    .bold {
-        font-weight: 600;
-    }
-</style>
-
 <ol>
 
 <li class="bold">Skapa en egen branch eller fork av gruppens repo för Spegeln. Denna branch eller repo ska i namnet innehålla ditt namn och att det är uppgift 4, så du kan redovisa med en länk till din branch.
